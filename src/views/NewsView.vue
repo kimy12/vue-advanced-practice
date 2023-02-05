@@ -15,13 +15,11 @@ export default {
     }
   },
   created(){
-    var vm = this;
     //new promise();
     // axios.get('https://api.hnpwa.com/v0/news/1.json')
     fetchNewsList()
       .then(response => {
-        console.log(response);
-        vm.users = response.data;
+        this.users = response.data;
       })
       .catch((error)=>{
         console.log(error);

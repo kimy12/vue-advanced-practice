@@ -16,11 +16,9 @@ export default {
     }
   },
   created() {
-    const vm = this;
     fetchAskList()
     .then(response => {
-      console.log(response);
-      vm.users = response.data;
+      this.users = response.data;
     })
     .catch(e => {
       console.log(e);

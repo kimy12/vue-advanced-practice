@@ -17,10 +17,9 @@ export default {
   },
 
   created(){
-    const vm = this;
     fetchJobsList()
     .then(response => {
-      vm.users = response.data;
+      this.users = response.data;
     })
     .catch( e => {
       console.log(e);
