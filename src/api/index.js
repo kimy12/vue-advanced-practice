@@ -23,12 +23,14 @@ function fetchUserInfo(username){
  return axios.get(`${config.baseUrl}user/${username}.json`); 
 }
 
+function fetchItemInfo(content){
+ return axios.get(`${config.baseUrl}item/${content}.json`); 
+}
+
 export {
   fetchNewsList,
   fetchAskList,
   fetchJobsList,
-  fetchUserInfo
+  fetchUserInfo,
+  fetchItemInfo
 }
-// fetchNewsList()
-//   .then()
-//   .catch()
