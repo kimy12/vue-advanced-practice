@@ -23,8 +23,8 @@ function fetchUserInfo(username){
  return axios.get(`${config.baseUrl}user/${username}.json`); 
 }
 
-function fetchItemInfo(content){
- return axios.get(`${config.baseUrl}item/${content}.json`); 
+function fetchItemInfo(item){
+ return axios.get(`${config.baseUrl}item/${item}.json`); 
 }
 
 export {

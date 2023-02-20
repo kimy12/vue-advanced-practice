@@ -43,8 +43,8 @@ export default {
       console.log(error);
     });
   },
-  FETCH_ITEM({commit}, content){
-    fetchItemInfo(content)
+  FETCH_ITEM({commit}, item){
+    fetchItemInfo(item)
     .then(({data}) => {
       commit('SET_ITEM', data)
     })
