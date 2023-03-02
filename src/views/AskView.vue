@@ -1,8 +1,11 @@
 <template>
   <div>
+    <list-item></list-item>
+  </div>
+  <!-- <div>
     <ul class="news-list">
       <li v-for="item in fetchedAsk" v-bind:key="item.title" class="post">
-        <!-- 포인트 영역 -->
+         포인트 영역 
         <div class="points">
           {{ item.points }}
         </div>
@@ -17,77 +20,18 @@
         </div>
       </li>
     </ul>
-    <!-- <p v-for="item in fetchedAsk" v-bind:key="item.title">
-      <router-link v-bind:to="`/item/${item.id}`">{{ item.title }}</router-link>
-      <small>{{ item.time_ago }} by {{ item.user }}</small>
-    </p> -->
-  </div>
+  </div> -->
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import ListItem from '../components/ListItem.vue';
+// import { mapGetters } from 'vuex';
 // import { fetchAskList } from '../api/index.js';
 
 export default {
-  
-  computed: {
-    ...mapGetters([
-      'fetchedAsk'
-    ]), 
-    // #2
-    // ...mapState({
-    //   asks: state => state.ask
-    // })
-    // # 1
-    // ask(){
-    //   return this.$store.state;
-    // }
+  components: {
+    ListItem,
   },
-  // data(){
-  //   return {
-  //     users : []
-  //   }
-  // },
-  created() {
-    // fetchAskList()
-    // .then(response => {
-    //   this.users = response.data;
-    // })
-    // .catch(e => {
-    //   console.log(e);
-    // });
-    this.$store.dispatch('FETCH_ASK');
-  }
+  
 }
 </script>
-
-<style scoped>
-.news-list {
-  margin: 0;
-  padding: 0;
-}
-
-.post {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-}
-
-.points {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #42b883;
-}
-
-.news-title {
-  margin: 0;
-}
-
-.link-text {
-  color: #828282;
-}
-</style>
