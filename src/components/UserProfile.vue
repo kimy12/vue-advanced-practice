@@ -4,19 +4,26 @@
             <i class="fa-solid fa-user"></i>
           </div>
           <div class="user-description">
-            <!-- <router-link :to="`/user/${fetchedItem.user}`">
-              {{ fetchedItem.user }}
-            </router-link>
+            <slot name="username">
+
+            </slot>
             <div class="time">
-              {{ fetchedItem.time_ago }}
-            </div> -->
+              <slot name="time">
+
+              </slot>
+            </div>
+            <slot name="karma">
+
+            </slot>
           </div>
         </div>
 </template>
 
 <script>
 export default {
-
+  props : {
+    info: Object
+  },
 }
 </script>
 
@@ -37,4 +44,5 @@ export default {
 
 .time {
   font-size: 0.7rem;
-}</style>
+}
+</style>
