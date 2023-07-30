@@ -5,15 +5,12 @@
           </div>
           <div class="user-description">
             <slot name="username">
-
             </slot>
             <div class="time">
               <slot name="time">
-
               </slot>
             </div>
             <slot name="karma">
-
             </slot>
           </div>
         </div>
