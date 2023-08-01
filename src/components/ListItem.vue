@@ -37,16 +37,17 @@
 
 <script>
 export default {
-  created() {
-    const name = this.$route.name;
-    if(name === 'news'){
-      this.$store.dispatch('FETCH_NEWS');
-    } else if(name === 'ask'){
-      this.$store.dispatch('FETCH_ASK');
-    } else if (name === 'jobs') {
-      this.$store.dispatch('FETCH_JOBS');
-    }
-  },
+  // 재활용을 위해 각 컴보넌트에 created 넣어줌 20230801
+  // created() {
+  //   const name = this.$route.name;
+  //   if(name === 'news'){
+  //     this.$store.dispatch('FETCH_NEWS');
+  //   } else if(name === 'ask'){
+  //     this.$store.dispatch('FETCH_ASK');
+  //   } else if (name === 'jobs') {
+  //     this.$store.dispatch('FETCH_JOBS');
+  //   }
+  // },
   computed: {
     listItems() {
       const name = this.$route.name;

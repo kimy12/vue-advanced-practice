@@ -13,6 +13,7 @@ export const store = new Vuex.Store({
   jobs : [],
   user : {},
   item : {},
+  LoadingStatus : false
  },
  //computed와 동일한 속성이지만 store에 있는 것임
  getters: {

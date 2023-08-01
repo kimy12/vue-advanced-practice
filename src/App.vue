@@ -4,16 +4,18 @@
     <transition name="page">
       <router-view></router-view>
     </transition>
+    <spinner-zone :loading="$store.state.LoadingStatus"/>
   </div>
 </template>
 
 <script>
 
 import ToolBar from './components/ToolBar.vue';
+import SpinnerZone from './components/SpinnerZone.vue';
 
 export default {
   components:{
-    ToolBar,
+    ToolBar, SpinnerZone
   },
 }
 

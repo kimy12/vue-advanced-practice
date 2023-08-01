@@ -5,6 +5,7 @@ import JobsView from '../views/JobsView.vue';
 import AskView from '../views/AskView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
+import { store } from '../store/index.js';
 
 Vue.use(VueRouter);
 
@@ -42,6 +43,22 @@ export const router = new VueRouter({
     }
   ]
 });
+
+// 네비게이션 가드 
+// 귀찮아서 그냥 해당 에러 eslint 꺼버림
+// eslint-disable-next-line no-unused-vars
+router.beforeEach((to, from, next) => {
+  store.commit('startSpinner');
+  setTimeout(() => {
+      next();
+  }, 1000);
+});
+
+// eslint-disable-next-line no-unused-vars
+router.afterEach((to, from) => {
+  store.commit('endSpinner');
+});
+
 
 
 
